@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Aurum Developments | Real Estate Investments in Costa Rica</title>
+  <meta name="description" content="Aurum Developments offers premium real estate and investment opportunities in Costa Rica. Discover exclusive listings today.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurum Developments | Real Estate & Investments</title>
+  <link rel="icon" type="image/png" href="file_000000000568623096e42fd2c41162d2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #0f1113;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background: radial-gradient(circle at top, #1b1e22, #0f1113);
+    }
+    header img {
+      max-width: 160px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      color: #d4af37;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0;
+      text-shadow: black 2px 3px 4px;
+    }
+    header p {
+      max-width: 720px;
+      margin: 20px auto 0;
+      font-size: 1.5rem;
+      color: #cfcfcf;
+      padding: 0 10px;
+      text-shadow: black 2px 3px 4px;
+    }
+    .hero {
+      height: 80vh; /* adapts to screen size */
+      background-image: url(images/Pital-Web.png);
+      background-size: cover;       /* fills screen */
+      background-position: center;  /* keeps focus */
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+    section {
+      padding: 80px 10%;
+    }
+    section h2 {
+      color: #d4af37;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      margin-bottom: 20px;
+    }
+    .about p, .services p {
+      max-width: 900px;
+      font-size: 20px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .services li {
+      padding: 12px 0;
+      border-bottom: 1px solid #2a2a2a;
+      font-size: 20px;
+    }
+    .props p{
+      font-size: 20px;
+    }
+    .properties {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .property {
+      background-color: #16191d;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .property img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .property div {
+      padding: 18px;
+      flex-grow: 1;
+    }
+    .property h3 {
+      margin: 0 0 10px;
+      color: #d4af37;
+      font-size: 1.2rem;
+    }
+    .property .price {
+      margin: 0 0 10px;
+      color: #4d9644;
+      font-size: 1.2rem;
+    }
+    #contact {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    #contact textarea {
+      min-height: 120px;
+    }
+
+    #contact button {
+      background: #000;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #contact button:hover {
+      opacity: 0.85;
+    }
+    .contact p{
+      font-size: 20px;
+    }
+
+    .newsletter {
+      width: 100vw;              /* Full screen width */
+      margin-left: calc(50% - 50vw); /* Break out of parent container */
+      min-height: 60vh;
+      background: linear-gradient(
+        135deg,
+        #000000 0%,
+        #1b1b1b 50%,
+        #3a2f12 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    /* Dark overlay */
+    .newsletter-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .newsletter-content {
+      max-width: 700px;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    /* Title */
+    .newsletter h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    /* Form */
+    .newsletter-form {
+      display: flex;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px 20px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      background: #977400;
+      color: white;
+      border: none;
+      padding: 0 28px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .newsletter-form button span {
+      margin-left: 5px;
+    }
+
+    /* Social */
+    .follow-text {
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+      background: #000;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .newsletter h2 {
+        font-size: 1.6rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        border-radius: 12px;
+      }
+
+      .newsletter-form button {
+        padding: 14px;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #0b0d0f;
+      color: #999;
+      font-size: 1rem;
+    }
+    a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    /* Tablets */
+    @media (max-width: 1024px) {
+      section {
+        padding: 70px 8%;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      header {
+        padding: 70px 15px 50px;
+      }
+      section {
+        padding: 60px 6%;
+      }
+      .property img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-content {
+        padding: 15px;
+      }
+    }
+
+    /* Small mobile */
+    @media (max-width: 480px) {
+      header img {
+        max-width: 130px;
+      }
+      section {
+        padding: 50px 5%;
+      }
+    }
+    /* Image zoom modal */
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        align-items: center;
+        justify-content: center;
+    }
+    .image-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 12px;
+    }
+
+    .image-modal .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #d4af37;
+        font-size: 40px;
+        cursor: pointer;
+    }
+    .property img {
+     cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <img src="images/AU-Logo.png">
+    <h1>Aurum Developments</h1>
+    <p>Premium Real Estate Investments</p>
+  </div>
+</header>
+<!-- START ABOUT -->
+<section class="about">
+  <h2>About Us</h2>
+  <p>
+    Aurum Developments specializes in identifying, developing, and promoting high-value real estate projects. 
+    Our mission is to connect investors with exceptional opportunities, combining market expertise, transparency, 
+    and a long-term vision focused on growth and sustainability.
+  </p>
+</section>
+<!-- END ABOUT -->
+<!-- START SERVICES -->
+<section class="services">
+  <h2>What We Do</h2>
+  <ul>
+    <li>Real estate development & project structuring</li>
+    <li>Investment advisory and land acquisition</li>
+    <li>Tourism, residential, and mixed-use projects</li>
+    <li>Property marketing and investor representation</li>
+  </ul>
+</section>
+<!-- END SERVICES -->
+<!-- START PROPS -->
+<section class="props">
+  <h2>Featured Properties</h2>
+  <p>Below are some of our selected opportunities. New properties can be added easily.</p>
+
+  <div class="properties">
+    <!-- PROPERTY CARD START -->
+    <div class="property">
+      <img src="images/Birri1-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Birri, Heredia, Costa Rica</h3>
+        <p>1.289 Square Meters</p>
+        <h3 class="price">USD 123.500</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Birri2-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Birri, Heredia, Costa Rica</h3>
+        <p>190 Square Meters House</p>
+        <p>3711 Total Square Meters</p>
+        <h3 class="price">USD 450.000</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Chal-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Bahia Chal, Puntarenas, Costa Rica</h3>
+        <p>150 Hectares</p>
+        <h3 class="price">1.500.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/CN-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Caño Negro, Alajuela, Costa Rica</h3>
+        <p>157 Hectares, 40 Hectares of Pasture</p>
+        <h3 class="price">1.500.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Loma-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Escazu, San Jose, Costa Rica</h3>
+        <p>20.000 Square Meters</p>
+        <p>10.000 Free Meters</p>
+        <h3 class="price">1.500.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/MonteA-Web.jpeg" alt="Property Image">
+      <div>
+        <h3>Escazu, San Jose, Costa Rica</h3>
+        <p>1.000 Square Meters</p>
+        <h3 class="price">130.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/NenaF-Web.jpeg" alt="Property Image">
+      <div>
+        <h3>Escazu, San Jose, Costa Rica</h3>
+        <p>7.5 Hectares</p>
+        <h3 class="price">4.875.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Nubes1-Web.jpeg" alt="Property Image">
+      <div>
+        <h3>Nubes, Coronado, Costa Rica</h3>
+        <p>11 Hectares</p>
+        <h3 class="price">600.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Nubes2-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Nubes, Coronado, Costa Rica</h3>
+        <p>10 Hectares</p>
+        <h3 class="price">1.500.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Pital-Web.png" alt="Property Image">
+      <div>
+        <h3>Pital, San Carlos, Costa Rica</h3>
+        <p>1.500 Hectares</p>
+        <h3 class="price">10.500.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/SM1-Web.jpeg" alt="Property Image">
+      <div>
+        <h3>San Mateo, Alajuela, Costa Rica</h3>
+        <p>7 Hectares</p>
+        <h3 class="price">400.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/SM2-Web.jpeg" alt="Property Image">
+      <div>
+        <h3>San Mateo, Alajuela, Costa Rica</h3>
+        <p>5 Hectares</p>
+        <h3 class="price">340.000 USD</h3>
+      </div>
+    </div>
+
+    <div class="property">
+      <img src="images/Soley-Web.jpg" alt="Property Image">
+      <div>
+        <h3>Soley, Guanacaste, Costa Rica</h3>
+        <p>6 lots, 60x6 square meters each</p>
+        <h3 class="price">80.000 USD</h3>
+      </div>
+    </div>
+    <!-- PROPERTY CARD END -->
+
+    <!-- Duplicate this block to add more properties -->
+  </div>
+</section>
+<!-- END PROPS -->
+<!-- START CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <form action="https://formsubmit.co/aurumdevelopments.cr@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" required></textarea>
+
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Send</button>
+  </form>
+</section>
+<!-- END CONTACT -->
+<!-- START NEWS -->
+<section class="newsletter">
+  <div class="newsletter-overlay"></div>
+
+  <div class="newsletter-content">
+    <h2>Get New listings</h2>
+
+    <form class="newsletter-form" action="https://formsubmit.co/aurumdevelopments.cr@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <input type="hidden" name="_subject" value="New Listings Newsletter Signup">
+      <input type="hidden" name="source" value="Newsletter - New Listings">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <button type="submit">
+        Sign up <span>→</span>
+      </button>
+    </form>
+
+    <p class="follow-text">Follow Us</p>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61584023922234&sk=about" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/aurumdevelopments.cr/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/aurum-developments-real-estate-agency-4a735b390?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BydSGS02kT0G8h3Z0Qj%2FOjg%3D%3D" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</section>
+<!-- END NEWS -->
+<footer>
+  © 2026 Aurum Developments. All rights reserved.
+</footer>
+
+</body>
+<!-- Image Zoom Modal -->
+<div id="imageModal" class="image-modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".image-modal .close");
+
+  document.querySelectorAll(".property img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+</html>
